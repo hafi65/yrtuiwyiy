@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script>
+        function validateForm(){
+            var x = document.forms["myForm"]["fname"].value;
+            if (x == " "){
+                alert("name must be filled out");
+                return false;
+            }
+            else document.write("name submitted");
+        }
+
+    </script>
+</head>
+<body>
+    <form name="myForm" onsubmit="validateForm()">
+Name:<input type="text" name="fname">
+<input type="submit" value="Submit">
+<p id="message"></p>
+    </form>
+    <p > enter a number and click ok</p>
+    <input id="id1" type="number" min="100" max="300" required>
+    <button onclick ="myfunction()">ok</button>
+    <p id="result"></p>
+    <script>
+        
+            function myFunction() {
+        var inpObj = document.getElementById("id1");
+        if (!inpObj.checkValidity()) {
+            document.getElementById("result").innerHTML = inpObj.validationMessege;
+        }
+        else{
+            document.getElementById("result").innerHTML = "Input ok";
+        }
+            }
+    </script>
+</body>
+</html>
